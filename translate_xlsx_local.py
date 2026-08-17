@@ -1,6 +1,5 @@
 import copy
 import json
-import os
 import re
 from pathlib import Path
 
@@ -10,13 +9,7 @@ from openpyxl.cell.rich_text import CellRichText, TextBlock
 from openpyxl.cell.text import InlineFont
 from openpyxl.styles import Alignment
 
-from local_translator import configure_argos, translate_ja_zh
-
-
 ROOT = Path(__file__).resolve().parent
-MODEL_ROOT = Path(os.environ.get("OFFERBOOK_MODEL_ROOT", r"D:\OfferBookLocalModels"))
-configure_argos(str(MODEL_ROOT))
-
 SOURCE = ROOT / "samples" / "mlit-autonomous-driving-xlsx" / "source-ja.xlsx"
 OUTPUT_DIR = ROOT / "outputs" / "excel-public-sample"
 CACHE_PATH = ROOT / "samples" / "mlit-autonomous-driving-xlsx" / "translations-cache-google.json"
