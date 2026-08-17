@@ -1,0 +1,13 @@
+.venv/
+.argos/
+models/
+outputs/*/
+!outputs/excel-public-sample/
+outputs/excel-public-sample/*
+!outputs/excel-public-sample/自动驾驶安全标准审查表_翻译版.xlsx
+!outputs/excel-public-sample/自动驾驶安全标准审查表_中文版.xlsx
+.artifact-work/
+node_modules/
+tmp/
+__pycache__/
+*.pyc

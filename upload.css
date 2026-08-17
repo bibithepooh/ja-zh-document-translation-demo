@@ -1,0 +1,40 @@
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.controls .dropzone {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 22px;
+  border: 1px dashed #65757b;
+  border-radius: 14px;
+  background: #152025;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone:hover,
+.dropzone.dragging {
+  border-color: var(--lime);
+  background: #1b292d;
+}
+
+.dropzone strong {
+  color: white;
+  font-size: 15px;
+}
+
+.dropzone span {
+  color: #8e9da2;
+  font-size: 12px;
+}
+
+.dropzone .file-status {
+  margin-top: 7px;
+  color: var(--lime);
+}

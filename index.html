@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="中日技术文档翻译与质量校验工作流——基于真实项目经验重构的脱敏演示。">
+  <title>中日技术文档翻译工作流｜脱敏演示</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="upload.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#top"><span class="mark">訳</span><span>Translation Workflow</span></a><nav><a href="#case">项目案例</a><a href="#demo">流程演示</a><a href="#quality">质量控制</a><a href="#privacy">脱敏说明</a></nav></header>
+<main id="top">
+  <section class="hero">
+    <div><p class="eyebrow">AI-assisted workflow · Sanitized demo</p><h1>中日技术文档<br><span>翻译与质量校验工作流</span></h1><p class="lead">基于实际项目经验重新构建的公开演示：把零散的人工翻译任务，整理为可复用、可检查的团队工作流程。</p><div class="actions"><a class="button primary" href="#demo">体验脱敏 Demo</a><a class="button secondary" href="#case">了解项目背景</a></div><p class="note">不包含原公司代码、文档、客户信息、接口配置或运行凭证。</p></div>
+    <aside class="impact"><p class="label">处理周期</p><small>原流程</small><strong class="before">跨 3 个工作日</strong><hr><small>工作流投入使用后</small><strong class="after">30–60 分钟</strong><p>以约 50 页技术文档为例</p></aside>
+  </section>
+
+  <section class="section" id="case"><div class="heading"><p class="index">01 / CASE</p><h2>从业务痛点到团队可用工具</h2><p>项目重点不在“调用一次模型”，而在于把需求、规则、文件处理、质量检查和协作入口连成完整流程。</p></div>
+    <div class="cards"><article><b>背景</b><h3>翻译任务被日常工作切碎</h3><p>团队需要频繁处理中日双语技术文档。人工翻译只能利用项目工作的间隙推进，一份约 50 页文件通常跨 3 个工作日才能交付。</p></article><article class="dark"><b>方案</b><h3>建立统一的翻译工作流</h3><p>独立开发翻译 Skill，覆盖 Word、PDF、PPT、Excel 与图片，并通过飞书自建应用和 Feishu MCP Server 接入团队协作入口。</p></article><article><b>我的职责</b><h3>负责从需求到验收</h3><p>梳理需求、设计流程、编写和调试程序、制定翻译与格式规则、完成飞书接入，并针对不同文件类型测试和验收。</p></article></div>
+    <div class="division"><div><p class="label">我负责</p><ul><li>需求与使用场景梳理</li><li>流程、规则和程序设计</li><li>飞书接入、测试与验收</li><li>最终结果判断与责任</li></ul></div><span class="cross">×</span><div><p class="label">AI 协助</p><ul><li>Claude Code：代码生成、修改与调试</li><li>Claude Sonnet 4.6：领域分析</li><li>术语提取与初步翻译</li><li>图片文字识别</li></ul></div></div>
+  </section>
+
+  <section class="demo-section" id="demo"><div class="section inner"><div class="heading"><p class="index">02 / DEMO</p><h2>上传 Excel 后，生成格式保留译文</h2><p>当前作品 Demo 使用国土交通省公开的自动驾驶安全审查表。公开样例会通过免费在线翻译通道生成初译，再执行术语校正和格式恢复；请勿上传公司或客户的非公开文件。</p></div>
+      <div class="demo"><div class="controls"><label for="demoFile">上传公开演示文档</label><label class="dropzone" id="dropzone" for="demoFile"><strong>选择 XLSX 或拖到这里</strong><span>推荐使用仓库内的国土交通省公开样例</span><span class="file-status" id="fileStatus">尚未选择文件</span></label><input class="file-input" id="demoFile" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"><label for="fileType">识别的文件类型</label><select id="fileType"><option>XLSX</option></select><div class="terms"><span>输出规则</span><i>原文在前，蓝色译文另起一行附在后</i><i>保留边框、填充、行列尺寸和合并单元格</i></div><button class="button run" id="runDemo">翻译并生成 Excel</button></div>
+      <div class="output"><div class="pipeline"><div><span>1</span><p>单元格提取</p></div><div><span>2</span><p>术语匹配</p></div><div><span>3</span><p>初步翻译</p></div><div><span>4</span><p>富文本标注</p></div><div><span>5</span><p>格式校验</p></div></div><div class="result" id="result"><div class="empty"><strong>→</strong><p>选择 XLSX 后点击“翻译并生成 Excel”</p></div></div></div>
+    </div></div>
+  </section>
+
+  <section class="section" id="quality"><div class="heading"><p class="index">03 / QUALITY</p><h2>AI 输出必须经过检查</h2><p>效率不是唯一目标。技术文档的数字、英文标识、术语和版式都需要单独控制。</p></div><div class="quality"><article><b>01</b><h3>术语一致</h3><p>提取核心术语并建立固定映射，避免同一词出现多个译法。</p></article><article><b>02</b><h3>原值保留</h3><p>数字、单位和英文缩写默认保留，异常变化进入待确认项。</p></article><article><b>03</b><h3>格式适配</h3><p>不同文件采用不同处理方式，尽量保持段落、表格和样式结构。</p></article><article><b>04</b><h3>人工复核</h3><p>模型负责初步处理，正式交付前仍由人员检查专业含义。</p></article></div></section>
+
+  <section class="section privacy" id="privacy"><div><p class="index">04 / PRIVACY</p><h2>公开的是方法，不是内部资料</h2><p>本页面根据个人实际项目经验重新构建，演示文件来自日本国土交通省公开资料。</p></div><div class="privacy-list"><p><b>✓</b>公开：通用流程、脱敏规则、政府公开样例</p><p><b>×</b>不公开：公司与客户文档、项目代号、会议记录</p><p><b>×</b>不公开：API Key、App Secret、Webhook 与内部配置</p></div></section>
+</main>
+<footer><p>AI-Assisted Japanese–Chinese Technical Document Translation Workflow</p><p>Sanitized portfolio demo · 2026</p></footer><script src="script.js"></script>
+</body></html>
